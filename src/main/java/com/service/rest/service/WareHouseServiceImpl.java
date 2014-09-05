@@ -2,7 +2,6 @@ package com.service.rest.service;
 
 import com.service.rest.domain.Apple;
 
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.net.URI;
@@ -31,11 +30,12 @@ public class WareHouseServiceImpl implements WareHouseService {
     }
 
     @Override
-    public Response putApple(Apple apple, @Context UriInfo uriInfo) throws URISyntaxException {
+    public Response putApple(Apple apple,UriInfo uriInfo) throws URISyntaxException {
         if (apples.size() == STORAGE_MAX_CAPACITY) {
             return Response.notModified().build();
         }
         apples.add(apple);
+        System.out.println(apple);
         URI addedAppleUri = new URI(WAREHOUSE_API_APPLE + String.valueOf(apples.size() - 1));
         return Response.created(addedAppleUri).build();
     }
