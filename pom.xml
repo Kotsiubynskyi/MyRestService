@@ -8,7 +8,7 @@
     <packaging>war</packaging>
 
     <dependencies>
-        <!--JAX-RS implementation from Jboss -->
+        <!--JAX-RS implementation from JBoss -->
         <!--If you deploy to JBoss EE container you may note scope:"provided" for this dependency-->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
