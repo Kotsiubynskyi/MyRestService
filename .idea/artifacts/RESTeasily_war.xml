@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="RESTeasily:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="RESTeasily.war">
-      <element id="artifact" artifact-name="RESTeasily:war exploded" />
-    </root>
-  </artifact>
-</component>
