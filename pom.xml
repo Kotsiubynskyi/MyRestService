@@ -7,8 +7,11 @@
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <dependencies>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
+    <dependencies>
         <!--JAX-RS implementation from JBoss -->
         <!--If you deploy to JBoss EE container you may note scope:"provided" for this dependency-->
         <dependency>
@@ -18,20 +21,12 @@
             <!--<scope>provided</scope>-->
         </dependency>
 
-        <!--<dependency>-->
-        <!--<groupId>com.sun.jersey</groupId>-->
-        <!--<artifactId>jersey-core</artifactId>-->
-        <!--<version>1.18.1</version>-->
-        <!--</dependency>-->
-
-
         <!--For parsing: dto->xml & vice versa -->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxb-provider</artifactId>
             <version>3.0.8.Final</version>
             <!--<scope>provided</scope>-->
-
         </dependency>
 
         <!--For parsing: dto->json & vice versa -->
@@ -42,10 +37,6 @@
             <!--<scope>provided</scope>-->
         </dependency>
     </dependencies>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <build>
         <finalName>RESTeasily</finalName>

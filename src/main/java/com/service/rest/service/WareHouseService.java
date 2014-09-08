@@ -34,7 +34,7 @@ public interface WareHouseService {
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Response putApple(@BeanParam Apple apple, @Context UriInfo uriInfo) throws URISyntaxException;
 
-    @PUT
+    @DELETE
     @Path("clearStorage")
     public Response clearStorage();
 }

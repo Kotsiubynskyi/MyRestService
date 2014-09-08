@@ -14,7 +14,7 @@ public class Apple {
     protected String taste;
 
     @FormParam("color")
-    @DefaultValue("red")
+    @DefaultValue("blue")
     private String color;
 
 

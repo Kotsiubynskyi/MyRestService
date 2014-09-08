@@ -1,5 +1,5 @@
 .apple, .butt:before, .top span:after, .butt:after, .top:before, .top:after, .butt:before, .butt:after {
-    background: red;
+    background: blue;
 }
 
 body, .bite, .butt span, .butt, .top, .top span {
@@ -111,8 +111,9 @@ body, .bite, .butt span, .butt, .top, .top span {
 }
 
 .storage {
-    overflow: hidden;
     height: 200px;
-    border: double brown thick;
     padding: 20px;
+    text-align: center;
+    border: double brown thick;
+    overflow: hidden;
 }

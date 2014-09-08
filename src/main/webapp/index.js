@@ -22,7 +22,7 @@ $(document).ready(function () {
 
     $("#clearStorage").click(function () {
         $.ajax({
-            type: 'PUT',
+            type: 'DELETE',
             url: '/RESTeasily/warehouse-api/clearStorage',
             success: function (data) {
                 $("#storage").empty();
