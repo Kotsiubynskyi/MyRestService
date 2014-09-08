@@ -1,6 +1,7 @@
 package com.service.rest.service;
 
 import com.service.rest.domain.Apple;
+import com.service.rest.exceptions.NoSpaceInStorageException;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
@@ -30,17 +31,22 @@ public class WareHouseServiceImpl implements WareHouseService {
     }
 
     @Override
-    public Response putApple(Apple apple,UriInfo uriInfo) throws URISyntaxException {
+    public Response putApple(Apple apple, UriInfo uriInfo) throws URISyntaxException {
         if (apples.size() == STORAGE_MAX_CAPACITY) {
-            return Response.notModified().build();
+            throw new NoSpaceInStorageException();
         }
         apples.add(apple);
-        System.out.println(apple);
         URI addedAppleUri = new URI(WAREHOUSE_API_APPLE + String.valueOf(apples.size() - 1));
         return Response.created(addedAppleUri).build();
     }
 
+    @Override
+    public Response clearStorage() {
+        apples.clear();
+        return Response.ok().build();
+    }
 
-    public static List<Apple> apples = new ArrayList<Apple>();
+
+    public List<Apple> apples = new ArrayList<Apple>();
 
 }

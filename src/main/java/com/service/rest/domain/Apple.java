@@ -9,16 +9,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Apple {
 
     @XmlAttribute
-    @DefaultValue("red")
-    @FormParam("color")
-    private String color;
-
-    @DefaultValue("tasty")
     @FormParam("taste")
+    @DefaultValue("tasty")
     protected String taste;
 
-    @DefaultValue("0")
+    @FormParam("color")
+    @DefaultValue("red")
+    private String color;
+
+
     @FormParam("weight")
+    @DefaultValue("100")
     private Integer weight;
 
     public Apple() {
@@ -30,12 +31,12 @@ public class Apple {
         this.taste = taste;
     }
 
-    public String getTaste() {
-        return taste;
+    public String getColor() {
+        return color;
     }
 
-    public void setTaste(String taste) {
-        this.taste = taste;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public Integer getWeight() {
@@ -44,6 +45,14 @@ public class Apple {
 
     public void setWeight(Integer weight) {
         this.weight = weight;
+    }
+
+    public String getTaste() {
+        return taste;
+    }
+
+    public void setTaste(String taste) {
+        this.taste = taste;
     }
 
     @Override

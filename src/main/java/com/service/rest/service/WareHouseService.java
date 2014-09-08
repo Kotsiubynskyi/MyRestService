@@ -5,6 +5,7 @@ import com.service.rest.domain.Apple;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -31,5 +32,9 @@ public interface WareHouseService {
     @Path("putApple")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public javax.ws.rs.core.Response putApple(@BeanParam Apple apple, @Context UriInfo uriInfo) throws URISyntaxException;
+    public Response putApple(@BeanParam Apple apple, @Context UriInfo uriInfo) throws URISyntaxException;
+
+    @PUT
+    @Path("clearStorage")
+    public Response clearStorage();
 }
