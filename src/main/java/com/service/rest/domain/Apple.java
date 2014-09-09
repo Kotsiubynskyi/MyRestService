@@ -17,7 +17,6 @@ public class Apple {
     @DefaultValue("blue")
     private String color;
 
-
     @FormParam("weight")
     @DefaultValue("100")
     private Integer weight;

@@ -6,6 +6,17 @@ body, .bite, .butt span, .butt, .top, .top span {
     background: #93cc65;
 }
 
+form {
+    margin: 0 auto;
+    width: 300px
+}
+
+input {
+    width: 200px;
+    text-align: center;
+    margin: 3 auto;
+}
+
 .apple {
     display: inline-flex;
     width: 50px;

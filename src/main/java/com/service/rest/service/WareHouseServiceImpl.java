@@ -14,6 +14,7 @@ public class WareHouseServiceImpl implements WareHouseService {
 
     private static final int STORAGE_MAX_CAPACITY = 5;
     public static final String WAREHOUSE_API_APPLE = "/warehouse-api/apple/";
+    public static final String THERE_IS_NO_APPLE_WITH_SUCH_ID = "There is no apple with such id";
 
     @Override
     public List<Apple> getAllApples() {
@@ -46,6 +47,15 @@ public class WareHouseServiceImpl implements WareHouseService {
         return Response.ok().build();
     }
 
+    @Override
+    public Response deleteAppleById(Integer appleId) {
+        try {
+            apples.remove(appleId.intValue());
+        } catch (IndexOutOfBoundsException e) {
+            return Response.status(Response.Status.BAD_REQUEST).entity(THERE_IS_NO_APPLE_WITH_SUCH_ID).build();
+        }
+        return Response.ok().build();
+    }
 
     public List<Apple> apples = new ArrayList<Apple>();
 

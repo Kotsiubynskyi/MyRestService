@@ -37,4 +37,9 @@ public interface WareHouseService {
     @DELETE
     @Path("clearStorage")
     public Response clearStorage();
+
+    @POST
+    @Path("deleteApple")
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    public Response deleteAppleById(@FormParam("appleid") Integer appleId);
 }
